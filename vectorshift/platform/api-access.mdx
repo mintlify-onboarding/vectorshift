@@ -1,0 +1,63 @@
+---
+title: "API Access"
+---
+
+_Note: Accessing the API requires a Pro, Business, or Enterprise subscription._
+
+You can use the API to run [Pipelines](/vectorshift/platform/api-access#run-a-pipeline-using-the-api) and [Chatbots](/vectorshift/platform/api-access#run-a-chatbot-using-the-api) programmatically. API calls are rate-limited to 250/minute for non-Enterprise subscriptions.
+
+### Generate an API Key
+
+To generate an API key, you can take the following steps:
+
+1. 1.  
+Navigate to the "Settings" page.  
+![](/images/vectorshift/platform/API%20Key%20Demo%20(Part%201).gif)
+
+2. 2.  
+Click "Generate Key" in the "API Keys" section, enter a name for your key, and click "Generate".  
+![](/images/vectorshift/platform/API%20Key%20Demo%20(Part%202).gif)
+
+3. 3.  
+Copy the public and private keys from the output. The private key will only be shown once upon generation, so make sure to store it somewhere safe.
+
+### Run a Pipeline using the API
+
+You can run a Pipeline through the API using the following parameters:
+
+* **Endpoint:** `https://api.vectorshift.ai/api/pipelines/run`
+
+* **Query Parameters:**  
+   * _(Optional)_ `Public-Key` _and_ `Private-Key`: For your public and private key, respectively. You can also pass your API keys as headers if preferred.
+
+* **Body Parameters:**  
+   * `inputs`: A JSON object with the input names associated with the Pipeline as the keys and the values for those respective inputs as the values.  
+   * _(Optional)_ `pipeline_id`:The ID associated with the Pipeline you want to run. You can use a combination of `pipeline_name`, `username`, and `org_name` in place of `pipeline_id` if preferred.  
+   * _(Optional)_ `pipeline_name`_,_ `username`_, and_ `org_name`: The Pipeline name, username, and org name associated with the Pipeline you want to run. If the Pipeline you are looking to run is not associated with an organization, you can omit `org_name`. If the Pipeline you want to run is in My Pipelines, you can pass `pipeline_name` without `username` or `org_name`. You can use `pipeline_id` in place of these parameters if preferred.
+
+* **Headers:**  
+   * _(Optional)_ `Public-Key` _and_ `Private-Key`: For your public and private key, respectively. You can also pass your API keys as query parameters if preferred.
+
+* **Response:** The response will be returned as a JSON object with the output names of the Pipeline as the keys and the values for those respective outputs as the values.
+
+### Run a Chatbot using the API
+
+You can run a Chatbot using the APi using the following parameters:
+
+* **Endpoint:** `https://api.vectorshift.ai/api/chatbots/run`
+
+* **Query Parameters:**  
+   * _(Optional)_ `Public-Key` _and_ `Private-Key`: For your public and private key, respectively. You can also pass your API keys as headers if preferred.
+
+* **Body Parameters:**  
+   * `input`: A string with your input message.  
+   * _(Optional)_ `chatbot_id`:The ID associated with the Chatbot you want to run. You can use a combination of `chatbot_name`, `username`, and `org_name` in place of `chatbot_id` if preferred.  
+   * _(Optional)_ `chatbot_name`: The Chatbot name associated with the Chatbot you want to run. You can use `chatbot_id` in place of this parameter if preferred.  
+   * _Optional)_ `conversation_id`: The conversation ID associated with the conversation you want to continue. If empty, your call will generate a new conversation with no conversation history. If you pass a conversation ID, the Chatbot will continue the conversation from where it left off and write the new responses to the conversation history.
+
+* **Headers:**  
+   * _(Optional)_ `Public-Key` _and_ `Private-Key`: For your public and private key, respectively. You can also pass your API keys as query parameters if preferred.
+
+* **Response:** The response will be returned as a JSON object with the following keys and values:  
+   * `output`: The output message from the Chatbot.  
+   * `conversation_id`: The conversation ID to which your input and the Chatbot's output were written.

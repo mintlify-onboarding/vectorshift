@@ -1,0 +1,60 @@
+---
+title: "Credits"
+---
+
+Every Pipeline has an associated credit cost based on the nodes within it. You can view your credits and add more credits from the "Settings" page.
+
+Paid subscriptions come with a stated number of free monthly credits. These credits are granted on the first calendar day of each month and expire at the end of the month.
+
+You can purchase additional credits by following the steps outlined in [Purchase Additional Credits (Personal)](/vectorshift/account/credits#purchase-additional-credits-personal) for Personal accounts and [Purchase Additional Credits (Organization)](/vectorshift/account/credits#purchase-additional-credits-organization) for Organization admin accounts. Additional credits purchased through this method do not expire.
+
+Personal credits are linked to their associated account, whereas Organization credits are shared across all members of the Organization and can only be purchased by Admin users.
+
+### Calculate Pipeline Credit Cost
+
+The cost to run a Pipeline is displayed next to the Pipeline and can be calculated by adding up the costs of the individual nodes within the Pipeline. The pricing for individual nodes is as follows:
+
+* **OpenAI LLMs:** If you use a personal API key, OpenAI LLMs cost 1 credit for every 10,000 runs. Otherwise, pricing varies per model and is based on the "Max Tokens" parameter set for the LLM node. Max Tokens defaults to 4096, and it can be changed by right-clicking the node and clicking "Details". Here is the pricing schema for the available models:  
+   * `gpt-3.5-turbo`: 0.002 credits for every 1,000 tokens in Max Tokens.  
+   * `gpt-3.5-turbo-16k`: 0.004 credits for every 1,000 tokens in Max Tokens.  
+   * `gpt-4`: 0.06 credits for every 1,000 tokens in Max Tokens.
+
+* **Image Gen:** Pricing varies per model and is based on the "Image Count" parameter set for the Image Gen node. Here is the pricing schema for the available models:  
+   * `DALL·E 2`: 0.02 credits for every image in Image Count.
+
+* **Pipeline:** Pricing equals the cost of the Pipeline itself. For example, if the Pipeline costs 0.02 credits to run on its own, the cost of a Pipeline node executing that Pipeline will be 0.02 credits.
+
+* **URL & Git Data Loaders:** 1 credit for every 1,000 runs.
+
+* **All Other Nodes:** 1 credit for every 10,000 runs.
+
+### Purchase Additional Credits (Personal)
+
+To purchase additional credits to your Personal account, take the following steps:
+
+1. 1.  
+Navigate to "Settings".  
+![](/images/vectorshift/account/API%20Key%20Demo%20(Part%201).gif)
+
+2. 2.  
+Click "Add Credits" under the "Subscription" section.  
+![](/images/vectorshift/account/Add%20Credits%20Personal%20Demo.gif)
+
+3. 3.  
+Enter a quantity of credits to purchase (min. 20), and click "Purchase".
+
+### Purchase Additional Credits (Organization)
+
+To purchase additional credits to your Organization's account, take the following steps:
+
+1. 1.  
+Navigate to "Admin Console".  
+![](/images/vectorshift/account/Admin%20Console%20Navigation%20Demo.gif)
+
+2. 2.  
+Click "Add Credits" under the "Subscription" section.  
+![](/images/vectorshift/account/Purchase%20Additional%20Credits%20(Organization).gif)
+
+3. 3.  
+Enter a quantity of credits to purchase (min. 20), and click "Purchase".
+

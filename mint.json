@@ -1,0 +1,72 @@
+{
+    "name": "VectorShift",
+    "logo": {
+      "light": "/logo/logo.webp",
+      "dark": "/logo/logo.webp"
+    },
+    "favicon": "/logo/logo.webp",
+    "colors": {
+      "primary": "#6366f1",
+      "light": "#8082FF",
+      "dark": "#6366f1"
+    },
+    "topbarCtaButton": {
+      "name": "Book a Demo",
+      "url": "https://calendly.com/albert_mao"
+    },
+    "topbarLinks": [
+      {
+        "name": "Login",
+        "url": "https://app.vectorshift.ai/"
+      }
+    ],
+    "anchors": [
+      {
+        "name": "Discord",
+        "icon": "discord",
+        "url": "https://discord.gg/QcwZwMQj6G"
+      }
+    ],
+    "navigation": [
+        {
+            "group": "Welcome to VectorShift",
+            "pages": [
+              "vectorshift/introduction",
+              "vectorshift/example-pipelines"
+            ]
+          },
+          {
+            "group": "Platform",
+            "pages": [
+              "vectorshift/platform/overview",
+              "vectorshift/platform/pipeli/Users/joshkim/Library/Application Support/CleanShot/media/media_ssK3stWYtX/CleanShot 2023-09-05 at 16.56.48@2x.pngnes",
+              "vectorshift/platform/marketplace",
+              "vectorshift/platform/storage",
+              "vectorshift/platform/integrations",
+              "vectorshift/platform/chatbots",
+              "vectorshift/platform/transformations",
+              "vectorshift/platform/api-access"
+            ]
+          },
+          {
+            "group": "Account",
+            "pages": [
+              "vectorshift/account/my-profile",
+              "vectorshift/account/organizations",
+              "vectorshift/account/subscriptions",
+              "vectorshift/account/credits"
+            ]
+          },
+          {
+            "group": "FAQ",
+            "pages": [
+              "vectorshift/faq/pipelines",
+              "vectorshift/faq/chatbots"
+            ]
+          }
+    ],
+    "footerSocials":
+      {
+          "linkedin": "https://www.linkedin.com/company/vectorshift/"
+      }
+  }

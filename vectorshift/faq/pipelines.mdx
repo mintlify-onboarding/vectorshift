@@ -1,0 +1,19 @@
+---
+title: "Pipelines"
+---
+
+### Why did my Pipeline return "Based" or "-" as an output? I'm using an OpenAI LLM.
+
+This may happen when your input is too large. Each LLM has a maximum number of input and output tokens it can process:
+
+* GPT-3.5 can support up to 4096 tokens
+
+* GPT-3.5-16k can support up to 16384 tokens
+
+* GPT-4 can support up to 8192 tokens
+
+If your input is too large, the model will be constrained to significantly shorten the output. To avoid running into the input limit, you can pass your inputs through a [VectorDB Loader / VectorDB Reader](/vectorshift/platform/pipelines/vector-db) or load them into a [Vector Store](/vectorshift/platform/storage/vector-stores) before passing them into your LLM to reduce your token count.
+
+### What is a VectorDB Reader? Why does it require input?
+
+[VectorDB Readers](/vectorshift/platform/pipelines/vector-db) take databases (i.e., [VectorDB Loaders](/vectorshift/platform/pipelines/vector-db)) and queries as inputs and return the the parts of the database that are most relevant to your query. For example, if you load a VectorDB Loader with your website's documentation and ask a question about a specific feature in your query, the VectorDB Reader will return the parts of your documentation relevant to the feature you queried.
