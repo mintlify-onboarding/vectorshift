@@ -55,7 +55,7 @@
                   "vectorshift/platform/pipelines/text",
                   "vectorshift/platform/pipelines/file",
                   "vectorshift/platform/pipelines/data-loaders",
-                  "vectorshift/platform/pipelines/vector-db" 
+                  "vectorshift/platform/pipelines/vector-db",
                   {
                     "group": "Multimodal",
                     "pages": [
