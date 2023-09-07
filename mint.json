@@ -47,6 +47,19 @@
             "group": "Platform",
             "pages": [
               "vectorshift/platform/overview",
+              {
+                "group": "Pipelines",
+                "pages": [
+                  "vectorshift/platform/overview",
+                  "vectorshift/platform/pipelines",
+                  "vectorshift/platform/marketplace",
+                  "vectorshift/platform/storage",
+                  "vectorshift/platform/integrations",
+                  "vectorshift/platform/chatbots",
+                  "vectorshift/platform/transformations",
+                  "vectorshift/platform/api-access"
+                ]
+              },
               "vectorshift/platform/pipelines",
               "vectorshift/platform/marketplace",
               "vectorshift/platform/storage",
