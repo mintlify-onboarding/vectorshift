@@ -26,7 +26,7 @@ Returns a set number of previous consecutive messages. This number defaults to 1
 
 Returns previous consecutive messages until adding an additional message would cause the total history size to be larger than the Max Tokens. The default number of Max Tokens is 2048 and can be changed by right-clicking the Chat Memory node and clicking "Details".
 
-![](/images/Screenshot%202023-08-02%20at%202.13.48%20PM.png)
+![](/images/18.webp)
 
 To give a pipeline memory, use the chat memory block. Essentially, the chat memory takes the text in historical conversations which can be fed back into a prompt for an LLM. Hence, chatbots often have this structure:
 
@@ -38,4 +38,4 @@ To give a pipeline memory, use the chat memory block. Essentially, the chat memo
 
 4. As a result, when the prompt gets fed into the LLM, it will get all the information it needs to answer based on what the user wants (input block), relevant data (from the Vector DB Reader), and conversation history (from the chat memory node).
 
-![](/images/Screenshot%202023-08-02%20at%202.15.07%20PM.png)
+![](/images/19.png)
