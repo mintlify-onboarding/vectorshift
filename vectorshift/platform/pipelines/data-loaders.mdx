@@ -1,0 +1,34 @@
+---
+title: "Data Loaders"
+description: "Data loaders take in a specific type of data and convert it into a form that can be loaded into a Vector database. Thus, the output node of these loaders should always be connected to the Vector Database loader. Here's the list of data loaders and how you can use it:"
+---
+
+## File Loader
+
+Node to read file either from user input (input block) or a file block. Can be any file type.
+
+## URL Loader
+
+URL either from user input (input block) or a URL placed in a text block. This URL can be blogs, docs, or any website that contains text and no auth required.
+
+## Online PDF loader
+
+Receive URL either from user input (input block) or a URL placed in a text block to read a PDF online.
+
+## Wikipedia Loader
+
+Receive a keyword then search query either from user input (input block) or text block.
+
+## Youtube Loader
+
+Receive an URL either from user input (input block) or a URL placed in a text block.
+
+## Arxiv Loader
+
+Receive a keyword then search query either from user input (input block) or text block.
+
+![](/images/Screenshot%202023-08-02%20at%201.34.52%20PM.png)
+
+A common structure for utilizing data loaders, Vector database loaders, and Vector database readers:
+
+![](/images/Screenshot%202023-08-01%20at%205.25.18%20PM.png)

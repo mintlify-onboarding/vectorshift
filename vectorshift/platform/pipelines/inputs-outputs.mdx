@@ -1,0 +1,38 @@
+---
+title: "Inputs/Outputs"
+description: "The Input and Output nodes are the start and end points of a Pipeline. They can be found within the Home section of the Pipeline builder, and they will be shown on the "Run Pipeline" screen whenever a user runs a Pipeline. Input and Output nodes have two fields:"
+---
+
+**Name:** This is the name that appears on the "Run Pipeline" screen when a user runs a Pipeline. These names must start with a letter or underscore, and they can only contain letters, numbers, and underscores throughout.
+
+**Type:** This is the format that the node expects to receive. You can find more details about node types in the [Input Nodes](/vectorshift/platform/pipelines/inputs-outputs#input-nodes) and [Output Nodes](/vectorshift/platform/pipelines/inputs-outputs#output-nodes) sections on this page.
+
+![](/images/Screenshot%202023-08-02%20at%2012.09.57%20PM.png)
+
+![](/images/Screenshot%202023-08-02%20at%2011.58.24%20AM.png)
+
+## Input Nodes
+
+Input nodes allow users to pass text or files to their Pipelines at the start of every run. Anything that a user writes/uploads to these inputs will then be sent to the nodes connected to the Input in the Pipeline. Input nodes can be connected to as many downstream nodes as desired, and they can be the following types:
+
+**Text:** Input nodes with a type of Text will appear on the "Run Pipeline" screen as editable text boxes. Users will be able to enter text directly into these fields, and they will be passed to any connected node.
+
+**File:** Input nodes with a type of File will appear on the "Run Pipeline" screen as a field that lets users select existing files they uploaded to their [Files](/vectorshift/platform/storage/files) tab while also being able to upload new files using the "Upload" button.
+
+_Note: Input nodes with a type of File will pass along raw files to their downstream nodes. Most nodes, including LLM nodes, will not be able to process these files directly. Please use a_ [_File Data Loader_](/vectorshift/platform/pipelines/data-loaders) _node to load the data from the node before passing it on._
+
+![](/images/Screenshot%202023-08-01%20at%2011.21.51%20PM.png)
+
+Example of an Input node connected to a File Loader, VectorDB Loader, and VectorDB Reader
+
+![](/images/Screenshot%202023-08-02%20at%201.54.06%20PM.png)
+
+Example of an Input node connected to both a VectorDB reader and a Text node.
+
+## Output Nodes
+
+Output nodes accept a result from a previous node in the Pipeline. Output nodes can only receive a result from a single node, so if you want to accept results from multiple nodes, you should use multiple Output nodes. Output nodes can be the following types:
+
+**Text:** Output nodes with a type of Text will display their output as text on the "Run Pipeline" screen, so you should ensure that the result that these nodes receive would make sense to show as text. For example, if an Output node receives a raw file, it will either display the raw file or fail to display any result, so make sure to process your non-text results using the appropriate [Data Loaders](/vectorshift/platform/pipelines/data-loaders) or [Transformations](/vectorshift/platform/transformations) before passing them to a text output.
+
+**Image:** Output nodes with a type of Image will display their output as a 2x2 grid of images on the "Run Pipeline" screen. This output type is intended to be used with [Multimodal Image Gen](/vectorshift/platform/pipelines/multimodal#image-gen) nodes. These images are only displayed once, so make sure to download them using the "Download" button or add a [File Save](/vectorshift/platform/pipelines/file#file-save-nodes) node to your Pipeline to retain the results.

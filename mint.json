@@ -50,17 +50,23 @@
               {
                 "group": "Pipelines",
                 "pages": [
-                  "vectorshift/platform/overview",
-                  "vectorshift/platform/pipelines",
-                  "vectorshift/platform/marketplace",
-                  "vectorshift/platform/storage",
-                  "vectorshift/platform/integrations",
-                  "vectorshift/platform/chatbots",
-                  "vectorshift/platform/transformations",
-                  "vectorshift/platform/api-access"
+                  "vectorshift/platform/pipelines/inputs-outputs",
+                  "vectorshift/platform/pipelines/large-language-models-llms",
+                  "vectorshift/platform/pipelines/text",
+                  "vectorshift/platform/pipelines/file",
+                  "vectorshift/platform/pipelines/data-loaders",
+                  "vectorshift/platform/pipelines/vector-db" 
+                  {
+                    "group": "Multimodal",
+                    "pages": [
+                      "vectorshift/platform/pipelines/multimodal/speech-to-text",
+                      "vectorshift/platform/pipelines/multimodal/image-gen"
+                    ]
+                  },
+                  "vectorshift/platform/pipelines/logic",
+                  "vectorshift/platform/pipelines/chat"
                 ]
               },
-              "vectorshift/platform/pipelines",
               "vectorshift/platform/marketplace",
               "vectorshift/platform/storage",
               "vectorshift/platform/integrations",

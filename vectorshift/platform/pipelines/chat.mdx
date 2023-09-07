@@ -1,0 +1,41 @@
+---
+title: "Chat"
+---
+
+## Chat Memory
+
+<Note>
+    You must use the Chatbot feature to make use of Chat nodes. Pipelines themselves do not store conversation history, so Chat Memory nodes will not return anything when run in a Pipeline. You must create a Chatbot using an existing Pipeline to store conversation history. See_ [_Chatbots_](/vectorshift/platform/chatbots) _for more info._
+</Note>
+
+Inherently, LLMs do not have "memory" - they do not remember previous conversation history. However, having a memory in a Chatbot may be useful to refer to previous contexts and outputs.
+
+### _Full - Formatted_
+
+Returns all previous chat history, with user messages prepended with "Human" and output messages prepended with "AI". Useful for handling short conversations, but may run into token limits once conversations start becoming longer.
+
+### _Full - Raw_
+
+Returns a Python list with elements in the following format: `{"type": type, "message": message}`, where `type` is `"input"` (i.e., Human) or `"output"` (i.e., AI) and `message` contains the contents of the message. Useful for developers looking to execute custom logic with their chat history using [Transformations](/vectorshift/platform/transformations).
+
+### _Message Buffer_
+
+Returns a set number of previous consecutive messages. This number defaults to 10 and can be changed by right-clicking the Chat Memory node and clicking "Details". Both Human messages and AI messages count toward the limit.
+
+### _Token Buffer_
+
+Returns previous consecutive messages until adding an additional message would cause the total history size to be larger than the Max Tokens. The default number of Max Tokens is 2048 and can be changed by right-clicking the Chat Memory node and clicking "Details".
+
+![](/images/Screenshot%202023-08-02%20at%202.13.48%20PM.png)
+
+To give a pipeline memory, use the chat memory block. Essentially, the chat memory takes the text in historical conversations which can be fed back into a prompt for an LLM. Hence, chatbots often have this structure:
+
+1. The text block will serve as the “prompt” that will eventually prompt the LLM.
+
+2. Chat Memory Block is connected to the text block - we label it with the ID "History" and call it out in the prompt with "Conversation History" so the LLM can understand.
+
+3. The input node is connected both to the prompt and to the VectorDB Reader block (“query” node) and the text block (prompt for the LLM).
+
+4. As a result, when the prompt gets fed into the LLM, it will get all the information it needs to answer based on what the user wants (input block), relevant data (from the Vector DB Reader), and conversation history (from the chat memory node).
+
+![](/images/Screenshot%202023-08-02%20at%202.15.07%20PM.png)

@@ -1,0 +1,23 @@
+---
+title: "Vector DB"
+description: "Vector Databases are a type of database often used in conjunction with LLMs. Vector databases store data from a source (e.g., file, website, youtube video), allow for a query, and returns the most relevant data from the source."
+---
+
+## VectorDB Loader
+
+The VectorDB takes data from the data loader and stores it into a Vector database. The "documents" input connects with a data loader (e.g., file loader, URL loader, youtube video loader). 
+
+## VectorDB Reader
+
+The VectorDB reader connects with a VectorDB loader (through the "database" node) and a query (e.g., from a text block or input block) and returns relevant data based on the query through the "results" output. The "results" output is often connected to a text block that serves as a prompt for a LLM. 
+
+## Vector Store Reader
+
+The Vector Store reader links to an existing [Vector Store](/vectorshift/platform/storage/vector-stores) that you have defined, allowing you to query the Vector Store for information without having to upload new documents. Like the VectorDB Reader, the "results" output is often connected to a text block that serves as a prompt for a LLM.
+
+
+![](/images/Screenshot%202023-08-02%20at%201.57.27%20PM.png)
+
+As a result, a common structure for VectorDB loaders and VectorDB Readers:
+
+![](/images/Screenshot%202023-08-01%20at%205.25.18%20PM.png)

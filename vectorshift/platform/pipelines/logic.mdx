@@ -1,0 +1,36 @@
+---
+title: "Logic"
+description: "If you want to execute different parts of your pipeline based on some condition that is determined as the Pipeline runs, you can use the Condition and Merge nodes in the Logic tab."
+---
+
+![](/images/image.png)
+
+## Condition Nodes
+
+Condition nodes allow you to specify a series of conditions and execute different parts of the pipeline with different outputs based on the value of the conditions. Conditions must evaluate to either `True` or `False`.
+
+The conditions utilize the same syntax as Python's conditions. Here is a list of rules to consider:
+
+* **Variables:** Any word (other than certain keywords) that is not surrounded in quotes ("", '') will be interpreted as a variable. Their variables will appear on the left side of the node and take the outputs of other nodes as input.
+
+* **Strings:** Any word surrounded in quotes ("", '') will be interpreted as a string.
+
+* **Conditional Operators:** `==` (equal to), `>` (greater than), `>=` (greater than or equal to), `<` (less than), `<=` (less than or equal to), `!=` (not equal to), `and` (checks if both conditions are true), `or` (checks if at least one condition is true), `not` (negates a condition).
+
+For example, let's say I have this simple Pipeline:
+
+![](/images/image.png)
+
+If the user inputs "Yes", the condition will execute whatever is connected to the top node on the left, and the node will output "Absolutely!". If the user inputs anything else, the condition will execute whatever is connected to the bottom node on the left, and the node will output "Maybe not...".
+
+If a condition is not met, any nodes downstream of the unmet condition will not be executed.
+
+## Merge Node
+
+If you need to execute a common set of logic after using a Condition node, you can use a Merge node to recombine the previous paths. Building on our previous example:
+
+![](/images/image.png)
+
+In this case, we are taking the outputs of the previous Condition node, and the Merge node will automatically select the path that was successful. The output of this final Pipeline would be `input1` if `condition == "Yes"` and `input2` otherwise.
+
+The default function here selects the first path it receives that evaluates to True, meaning that if you were to pass multiple conditional nodes with multiple True outputs to one Merge node, it would only return a single output.
