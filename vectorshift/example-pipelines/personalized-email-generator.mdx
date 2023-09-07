@@ -1,0 +1,51 @@
+---
+title: "Personalized Email Generator"
+---
+
+**Scenario: We are a strategy consulting firm and we are doing cold outreach as part of our sales process using email templates but our response rates are low. We decide to build a pipeline that helps generate personalized email if we submit the URL of the target client’s website.** 
+
+At a high level, we need to create the following pipeline components:
+
+1. A way to feed a website URL into the pipeline and embed them into a Vector database
+
+2. A way for the LLM to:  
+   * receive queries from the Vector Database and  
+   * generate a sentence to be used in an email template that is personalized to information in the URL
+
+## Step 1 - Open the Pipeline Builder
+
+Click “Build a Pipeline” within the “Overview” tab or click “Build” within the “Pipeline” tab
+
+![](https://lh4.googleusercontent.com/HH2YJNvx1OoB_bfNbV1ISwpTQdS5V9BosDoDRWMm6DaoGGG75Juxtm743Vux6506Jrqdni3fr6gk2u3sBDkbyFpBhCRA6X_fxpBLrtHXPhfXszR10EhKfoZLVRatn6XqCZ_MT75MhQs6UqmPWRVpryc)
+
+## Step 2 - Feed Website URL
+
+We use the same structure as the [Chatbot](/vectorshift/example-pipelines/chatbot) example:
+
+1. Accept a URL link as [Input](/vectorshift/platform/pipelines/inputs-outputs#input-nodes)
+
+2. Convert the contents of the website into a format that [VectorDB](/vectorshift/platform/pipelines/vector-db) can understand
+
+3. Feed scraped content into a [VectorDB](/vectorshift/platform/pipelines/vector-db), and
+
+4. Allow for relevant information to be queried from the [VectorDB](/vectorshift/platform/pipelines/vector-db).
+
+![](https://lh4.googleusercontent.com/DB5RUMi2EI3oLLmgMibcep7MikE4RSzRWfh5IzS8DJbQWb_ub7cNNwt295jdos-8LVqjR2d8ArplZchx923yMmFRofK_EiUnzAPxfWAbZPxyOmtadlkm7_RNyzc_GZddrr6IilE9ly9rn7M2JZXWn0M)
+
+## Step 3 - Connect with LLM
+
+1. We craft the prompt that we will feed into the LLM by:  
+   * asking a question that will help the LLM craft the personalized sentence (“_How can this company grow_?”), and  
+   * feeding in relevant parts queried from the Vector DB
+
+2. We feed the prompt into the LLM. We also specify how the LLM should behave in the system node:  
+   * The LLM is a personalized sentence generator for a consulting firm and it should generate a personalized sentence that explains what the consulting firm can do to help the company  
+   * Instruct the LLM to limit response to 1 sentence,  
+   * Present the response in the first person so it fits in the email flow, and  
+   * An example. This gives more specificity for the model to understand what it needs to do.
+
+3. We feed the output of the model into a “`personalized_message`” input variable in an email template. Finally, we attach an output node on the other end of the template.
+
+![](https://lh6.googleusercontent.com/gUtG6W1CEOYKT4etSEubaoTcuGdF4idrJQy0VChLZ1hij4mWmUX08s3iuIZteFvKel_ywLJdel6vE5wy_KRXulAUBwl3kOAC52bHW3FSfxTjG_fOPecdtpwVsv9PuFJZ6GCYpIn8hCuGiWZFowzAHeE)
+
+![](/images/Screenshot%202023-08-01%20at%2011.59.13%20PM.png)

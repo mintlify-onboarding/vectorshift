@@ -32,14 +32,22 @@
             "group": "Welcome to VectorShift",
             "pages": [
               "vectorshift/introduction",
-              "vectorshift/example-pipelines"
+              {
+                "group": "Example Pipelines",
+                "pages": [
+                  "vectorshift/example-pipelines/chatbot",
+                  "vectorshift/example-pipelines/document-search",
+                  "vectorshift/example-pipelines/personalized-email-generator",
+                  "vectorshift/example-pipelines/analyst"
+                ]
+              }
             ]
           },
           {
             "group": "Platform",
             "pages": [
               "vectorshift/platform/overview",
-              "vectorshift/platform/pipeli/Users/joshkim/Library/Application Support/CleanShot/media/media_ssK3stWYtX/CleanShot 2023-09-05 at 16.56.48@2x.pngnes",
+              "vectorshift/platform/pipelines",
               "vectorshift/platform/marketplace",
               "vectorshift/platform/storage",
               "vectorshift/platform/integrations",
