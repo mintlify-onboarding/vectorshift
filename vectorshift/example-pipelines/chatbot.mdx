@@ -1,8 +1,7 @@
 ---
 title: "Chatbot"
+description: "Scenario: We want to build a customer service chatbot that answers questions about our product and embed it into the website. The main data source we want the chatbot to leverage is our website: vectorshift.ai."
 ---
-
-**Scenario: We want to build a customer service chatbot that answers questions about our product and embed it into the website. The main data source we want the chatbot to leverage is our website: vectorshift.ai.** 
 
 With respect to structure, the pipeline will look very similar to the Document Search pipeline. The only difference is we need to utilize a URL loader instead of a file loader. 
 
@@ -18,7 +17,7 @@ At a high level, we need to create the following pipeline components:
 
 Open the pipeline builder: click “Build a Pipeline” within the “Overview” tab or click “Build” within the “Pipeline” tab.
 
-![](https://lh4.googleusercontent.com/HH2YJNvx1OoB_bfNbV1ISwpTQdS5V9BosDoDRWMm6DaoGGG75Juxtm743Vux6506Jrqdni3fr6gk2u3sBDkbyFpBhCRA6X_fxpBLrtHXPhfXszR10EhKfoZLVRatn6XqCZ_MT75MhQs6UqmPWRVpryc)
+<Frame>![](https://lh4.googleusercontent.com/HH2YJNvx1OoB_bfNbV1ISwpTQdS5V9BosDoDRWMm6DaoGGG75Juxtm743Vux6506Jrqdni3fr6gk2u3sBDkbyFpBhCRA6X_fxpBLrtHXPhfXszR10EhKfoZLVRatn6XqCZ_MT75MhQs6UqmPWRVpryc)</Frame>
 
 ## Step 2 - Feed the Website URL
 
@@ -36,7 +35,7 @@ Creating the building blocks for the above action will have the following four n
 
 Note: we connect the Vector DB loader to the “database” node of the VectorDB reader.
 
-![](https://lh5.googleusercontent.com/SzT99Ndu0roDtdCTdnRHQAov-AGQDZBC8DPT6_yWsmS6OG7pwce_w_FrfqnSYJN1e7DRFrrjDPXugMbNrmwOGZTe87T9Wuye4VFncbZ4EUN7ZKd0K-sOesoo5ECuFJQWL187O4MPVilfVJxh20Ho34M)
+<Frame>![](https://lh5.googleusercontent.com/SzT99Ndu0roDtdCTdnRHQAov-AGQDZBC8DPT6_yWsmS6OG7pwce_w_FrfqnSYJN1e7DRFrrjDPXugMbNrmwOGZTe87T9Wuye4VFncbZ4EUN7ZKd0K-sOesoo5ECuFJQWL187O4MPVilfVJxh20Ho34M)</Frame>
 
 Feed Website URL
 
@@ -52,7 +51,7 @@ Create a prompt that contains queries from the Vector database, store conversati
    * Passing the question into the VectorDB reader will allow for the VectorDB reader to query relevant information, which is outputted and also inputted into the prompt and  
    * we need to pass the question into the prompt (text node) so the LLM receives the user input as well.
 
-![](https://lh4.googleusercontent.com/e-3rpccHr3yNCMMzMc_Fj6ZMz9QjOPAr-uhv6Sa1jNxQIcJKvf-462934uKpOcsWUsiycrPd9eIOvgq-mI9PHpax9SyQP7YXQb3QDthHU0zs0O3ueOfdyeFpXxTxxYDHoE6DKc2LL8fecizqRzvqv1s)
+<Frame>![](https://lh4.googleusercontent.com/e-3rpccHr3yNCMMzMc_Fj6ZMz9QjOPAr-uhv6Sa1jNxQIcJKvf-462934uKpOcsWUsiycrPd9eIOvgq-mI9PHpax9SyQP7YXQb3QDthHU0zs0O3ueOfdyeFpXxTxxYDHoE6DKc2LL8fecizqRzvqv1s)</Frame>
 
 Design prompts
 
@@ -64,13 +63,13 @@ Now, we need to instruct the [LLM](/vectorshift/platform/pipelines/large-languag
 
 2. We connect the text box from above where we composed the prompt to the `“prompt”` node. Finally, we connect an output node to the `“response”` output node.
 
-![](https://lh3.googleusercontent.com/GlNVINjuzNaH81jBwJMJjr31vJxMkyxcabGLIvq-wXKc6joT9CAAfMHiItpK_urJ3PcIooaUTmaNITjthzBzSEUDN9yCAGyKIxeJ0ORp2-lYDMSkK-Tz8q-ZNORpqYM9VnQeSPsItNA23fr5Dfvt1po)
+<Frame>![](https://lh3.googleusercontent.com/GlNVINjuzNaH81jBwJMJjr31vJxMkyxcabGLIvq-wXKc6joT9CAAfMHiItpK_urJ3PcIooaUTmaNITjthzBzSEUDN9yCAGyKIxeJ0ORp2-lYDMSkK-Tz8q-ZNORpqYM9VnQeSPsItNA23fr5Dfvt1po)</Frame>
 
 Connect to LLM
 
 Full pipeline (_click for full preview_)
 
-![](https://lh4.googleusercontent.com/gV-bBZKFIAF0HUHKt0i14SYhSF49Ngx3pftFWB6ZTgM2WXxkkYLLmWw-OOQgAnIfgzqdKngANvLfxw8Q3c6PN4xwqE1PUXwa1lfo-8SZRHWJYM9R47qQt3rmvkIxtU1-PvHW6oD8lzJyKoTQO1zitPo)
+<Frame>![](https://lh4.googleusercontent.com/gV-bBZKFIAF0HUHKt0i14SYhSF49Ngx3pftFWB6ZTgM2WXxkkYLLmWw-OOQgAnIfgzqdKngANvLfxw8Q3c6PN4xwqE1PUXwa1lfo-8SZRHWJYM9R47qQt3rmvkIxtU1-PvHW6oD8lzJyKoTQO1zitPo)</Frame>
 
 Full pipeline
 
@@ -80,6 +79,6 @@ Access the pipeline in a `“form”` type format. In the `“Pipelines”` tab,
 
 Access the pipeline in chatbot format. In the `“Chatbot”` tab, click `“Add”.` In the popup and in the `“pipeline”` field, select the name of the pipeline that you just created. After creating the chatbot, click `“Run”` to start the chatbot. Chatbot can also be accessed via API (click on your profile on the top right and click settings to access the API key).
 
-![](/images/CleanShot%202023-08-17%20at%2003.43.33%402x.png)
+<Frame>![](/images/chatbot.png)</Frame>
 
 Finally, to publish your pipeline to the marketplace, go back to the `“Pipelines”` tab and find the pipeline you would like to publish. Then, click the three dots on the right-hand side and click `“Publish”`.

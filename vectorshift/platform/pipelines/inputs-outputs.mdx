@@ -1,15 +1,17 @@
 ---
 title: "Inputs/Outputs"
-description: "The Input and Output nodes are the start and end points of a Pipeline. They can be found within the Home section of the Pipeline builder, and they will be shown on the Run Pipeline screen whenever a user runs a Pipeline. Input and Output nodes have two fields:"
+description: "Pipeline that mimics complex logical thinking"
 ---
+
+The Input and Output nodes are the start and end points of a Pipeline. They can be found within the "Home" section of the Pipeline builder, and they will be shown on the "Run Pipeline" screen whenever a user runs a Pipeline. Input and Output nodes have two fields:
 
 **Name:** This is the name that appears on the "Run Pipeline" screen when a user runs a Pipeline. These names must start with a letter or underscore, and they can only contain letters, numbers, and underscores throughout.
 
 **Type:** This is the format that the node expects to receive. You can find more details about node types in the [Input Nodes](/vectorshift/platform/pipelines/inputs-outputs#input-nodes) and [Output Nodes](/vectorshift/platform/pipelines/inputs-outputs#output-nodes) sections on this page.
 
-![](/images/2.png)
+<Frame>![](/images/2.png)</Frame>
 
-![](/images/3.webp)
+<Frame>![](/images/3.webp)</Frame>
 
 ## Input Nodes
 
@@ -21,11 +23,11 @@ Input nodes allow users to pass text or files to their Pipelines at the start of
 
 _Note: Input nodes with a type of File will pass along raw files to their downstream nodes. Most nodes, including LLM nodes, will not be able to process these files directly. Please use a_ [_File Data Loader_](/vectorshift/platform/pipelines/data-loaders) _node to load the data from the node before passing it on._
 
-![](/images/4.webp)
+<Frame>![](/images/4.webp)</Frame>
 
 Example of an Input node connected to a File Loader, VectorDB Loader, and VectorDB Reader
 
-![](/images/5.webp)
+<Frame>![](/images/5.webp)</Frame>
 
 Example of an Input node connected to both a VectorDB reader and a Text node.
 

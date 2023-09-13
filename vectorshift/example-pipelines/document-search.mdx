@@ -1,8 +1,9 @@
 ---
 title: "Document Search"
+description: "A chatbot that allows you to ask questions about a document"
 ---
 
-**Scenario: We want to build a pipeline that answers questions about a document in a chat-like format. In this case, we have questions about Apple’s annual report (> 80-page document with various charts) and want them quickly answered. We anticipate that we will have questions about other large documents and decide to build a pipeline to automate this workflow.** 
+**Scenario: We want to build a pipeline that answers questions about a document in a chat-like format. In this case, we have questions about Apple’s annual report (> 80-page document with various charts) and want them quickly answered. We anticipate that we will have questions about other large documents and decide to build a pipeline to automate this workflow.**
 
 At a high level, we need to create the following pipeline components:
 
@@ -16,7 +17,7 @@ At a high level, we need to create the following pipeline components:
 
 Click “Build a Pipeline” within the “Overview” tab or click “Build” within the “Pipeline” tab. 
 
-![](https://lh4.googleusercontent.com/HH2YJNvx1OoB_bfNbV1ISwpTQdS5V9BosDoDRWMm6DaoGGG75Juxtm743Vux6506Jrqdni3fr6gk2u3sBDkbyFpBhCRA6X_fxpBLrtHXPhfXszR10EhKfoZLVRatn6XqCZ_MT75MhQs6UqmPWRVpryc)
+<Frame>![](https://lh4.googleusercontent.com/HH2YJNvx1OoB_bfNbV1ISwpTQdS5V9BosDoDRWMm6DaoGGG75Juxtm743Vux6506Jrqdni3fr6gk2u3sBDkbyFpBhCRA6X_fxpBLrtHXPhfXszR10EhKfoZLVRatn6XqCZ_MT75MhQs6UqmPWRVpryc)</Frame>
 
 ## Step 2 - Feeding the File
 
@@ -25,14 +26,14 @@ We need to create a structure that allows the pipeline to accept a file, feed th
 1. In the “files” tab, upload the document that you want to use by clicking the “Add” button
 
 2. Creating the building blocks for the above action will have the following four node structures below  
-   * [File Input](/vectorshift/platform/pipelines/file): select the file uploaded in step 1 with the pulldown in the file input node.  
+   * [File Input](/vectorshift/platform/pipelines/file): select the file uploaded in step 1 with the pulldown in the file input node.   
    * [File Loader](/vectorshift/platform/pipelines/file#file-node): This converts the file into a format that the VectorDB can understand.  
    * [VectorDB Loader](/vectorshift/platform/pipelines/vector-db#vectordb-loader): loads the data into the Vector Database.  
    * [VectorDB Reader](/vectorshift/platform/pipelines/vector-db#vectordb-reader): provides an endpoint where the user can query the VectorDatabase.
 
 Note: we connect the [VectorDB Loader](/vectorshift/platform/pipelines/vector-db#vectordb-loader) to the “`database`” node of the [VectorDB Reader](/vectorshift/platform/pipelines/vector-db#vectordb-reader).
 
-![](https://lh3.googleusercontent.com/KLt1rkAG0dRKYAN8eOLRWWfcHfi_E7KZYsVhIhKsPejLJTFwwtw9dIQcnTqNvQInIvDV-JP0N0fnchZCDQRlvdUuOen3UWfNKeQaUiSc9oo2UQoY53jK-w3Hm_rYyrDRe9VuYa00AwmxIVRXXpYb3Ps)
+<Frame>![](https://lh3.googleusercontent.com/KLt1rkAG0dRKYAN8eOLRWWfcHfi_E7KZYsVhIhKsPejLJTFwwtw9dIQcnTqNvQInIvDV-JP0N0fnchZCDQRlvdUuOen3UWfNKeQaUiSc9oo2UQoY53jK-w3Hm_rYyrDRe9VuYa00AwmxIVRXXpYb3Ps)</Frame>
 
 ## Step 3 - Create a Prompt
 
@@ -46,9 +47,8 @@ We need to create a prompt that contains the queries from the [VectorDB](/vector
    * Passing the question into the [VectorDB Reader](/vectorshift/platform/pipelines/vector-db#vectordb-reader) will allow for the [VectorDB Reader](/vectorshift/platform/pipelines/vector-db#vectordb-reader) to query relevant information, which is outputted and also inputted into the prompt, and  
    * We need to pass the question into the prompt ([Text](/vectorshift/platform/pipelines/text) node) so the LLM receives the user input as well.
 
-![](https://lh4.googleusercontent.com/e-3rpccHr3yNCMMzMc_Fj6ZMz9QjOPAr-uhv6Sa1jNxQIcJKvf-462934uKpOcsWUsiycrPd9eIOvgq-mI9PHpax9SyQP7YXQb3QDthHU0zs0O3ueOfdyeFpXxTxxYDHoE6DKc2LL8fecizqRzvqv1s)
+<Frame>![](https://lh4.googleusercontent.com/e-3rpccHr3yNCMMzMc_Fj6ZMz9QjOPAr-uhv6Sa1jNxQIcJKvf-462934uKpOcsWUsiycrPd9eIOvgq-mI9PHpax9SyQP7YXQb3QDthHU0zs0O3ueOfdyeFpXxTxxYDHoE6DKc2LL8fecizqRzvqv1s)</Frame>
 
-Prompt design
 
 ## **Step 4 - Connect to LLM.** 
 
@@ -58,32 +58,27 @@ Here, we need to instruct the LLM to be an analyst and connect the LLM to the ab
 
 2. We connect the [Text](/vectorshift/platform/pipelines/text) node from above where we composed the prompt to the “`prompt`” node. Finally, we connect an output node to the “response” [Output](/vectorshift/platform/pipelines/inputs-outputs#output-nodes) node.
 
-![](https://lh4.googleusercontent.com/5_XVt0s4jt9eX9dbJ6ycC2I0nRIIBT4xMMXSXElsAGG0x9TqzDBq4Cp645r-A2FqTpRwbvSoGOdOmivl4hUmaVEWF4dcczUOklSVIL3pdcSnzRSlsM3_0tsdGwYyAORhUC1KqHi7SK1OHH-LNg5DIwc)
+<Frame>![](https://lh4.googleusercontent.com/5_XVt0s4jt9eX9dbJ6ycC2I0nRIIBT4xMMXSXElsAGG0x9TqzDBq4Cp645r-A2FqTpRwbvSoGOdOmivl4hUmaVEWF4dcczUOklSVIL3pdcSnzRSlsM3_0tsdGwYyAORhUC1KqHi7SK1OHH-LNg5DIwc)</Frame>
 
-Full Pipeline (click image to enlarge)
 
-![](https://lh6.googleusercontent.com/IZ5nNnlFAV1HSusvM6FXlr_PzjZUXLXerqYn6DaEVbeiaRefba2pEPOMy9_bl3oKk-vXWW70QSCD8mkiyfmLNnAcOgIqsJp2XzBnKYOZANHeT_FhBMwwIP9Ja3c6ix9NOGa_PlhwV0OBhbgo-EoZAow)
+<Frame>![](https://lh6.googleusercontent.com/IZ5nNnlFAV1HSusvM6FXlr_PzjZUXLXerqYn6DaEVbeiaRefba2pEPOMy9_bl3oKk-vXWW70QSCD8mkiyfmLNnAcOgIqsJp2XzBnKYOZANHeT_FhBMwwIP9Ja3c6ix9NOGa_PlhwV0OBhbgo-EoZAow)</Frame>
 
 ## Step 5 - Run and Share
 
 Access the pipeline in a “`form`” type format. In the “`Pipelines`” tab, select the pipeline you just created, and click “`run`”. Ask questions directly in the input box.
 
-![](https://lh6.googleusercontent.com/HnYt8G3JifoG0LtWMRmeX4zmsRoh6Ctu15uQkScrD0iYxtNfidHbq4ue94tS3eWTn49FzKxNfCjHX--4UVGM4fxouHzdx8TJ7LOHDEt3H5pp3SNp87iGAefqn2nr0Is4h5T3VV_-CfBU4Gjc81X23zQ)
+<Frame>![](https://lh6.googleusercontent.com/HnYt8G3JifoG0LtWMRmeX4zmsRoh6Ctu15uQkScrD0iYxtNfidHbq4ue94tS3eWTn49FzKxNfCjHX--4UVGM4fxouHzdx8TJ7LOHDEt3H5pp3SNp87iGAefqn2nr0Is4h5T3VV_-CfBU4Gjc81X23zQ)</Frame>
 
-Run pipeline Document Analyst
 
-![](https://lh6.googleusercontent.com/JktY1K6NNB9aGPfKIn5jhtvOOcL1Bb8aVg0eBGtXGwr3koLSz3Xj-np7RB_bkOMjGhbX0zNDeNhOVUfnc6hdnMQnZrmIJZXdfl_SvLaQ0qiOEIi7WeVTOvyNittOqfszUfWdgGcm5cVsTBXEBb6K_Pg)
+<Frame>![](https://lh6.googleusercontent.com/JktY1K6NNB9aGPfKIn5jhtvOOcL1Bb8aVg0eBGtXGwr3koLSz3Xj-np7RB_bkOMjGhbX0zNDeNhOVUfnc6hdnMQnZrmIJZXdfl_SvLaQ0qiOEIi7WeVTOvyNittOqfszUfWdgGcm5cVsTBXEBb6K_Pg)</Frame>
 
-Running pipeline interface
 
 Access the pipeline in chatbot format. Click the “Chatbot” tab and click “`Add`”. In the popup and in the “`pipeline`” field, select the name of the pipeline that you just created. After creating the chatbot, click “`Run`” to start the chatbot. Chatbot can also be accessed via API (click on your profile on the top right and click settings to get your API key).
 
-![](https://lh3.googleusercontent.com/E9pcgf6kYXgQNQdg9UEcQzVyRXUrXzgiIxQannXa5VzXdhXSlkAc6aBKqudwtM7SKeRrxLq9FaUVXXNaE7vGAdfkkE5g454aBsIYcI51lxKLiz-kFXblKuvvkzSajJMH-W2mLcM-DL7sTpFde4mJm1U)
+<Frame>![](https://lh3.googleusercontent.com/E9pcgf6kYXgQNQdg9UEcQzVyRXUrXzgiIxQannXa5VzXdhXSlkAc6aBKqudwtM7SKeRrxLq9FaUVXXNaE7vGAdfkkE5g454aBsIYcI51lxKLiz-kFXblKuvvkzSajJMH-W2mLcM-DL7sTpFde4mJm1U)</Frame>
 
-Click "Add" to create a chatbot
 
-![](https://lh5.googleusercontent.com/eHnAeZ86uyEXRPgmdYdYubVn7CHdHZgYHW2RA8J86RynG9C4_4adKibqt_dQZ_CuaqSzPBbJSgbGKM6OSA59zc9RG0sASpqfJCbTuZKUe9YgRbuUigqC45cYqKwlOu4Qe4fciL8fd2x6ulidxYO6OZo)
+<Frame>![](https://lh5.googleusercontent.com/eHnAeZ86uyEXRPgmdYdYubVn7CHdHZgYHW2RA8J86RynG9C4_4adKibqt_dQZ_CuaqSzPBbJSgbGKM6OSA59zc9RG0sASpqfJCbTuZKUe9YgRbuUigqC45cYqKwlOu4Qe4fciL8fd2x6ulidxYO6OZo)</Frame>
 
-Chatbot result
 
 Finally, to publish your pipeline to the marketplace, go back to the “`Pipelines`” tab and find the pipeline you would like to publish. Then, click the three dots on the right-hand side and click “`publish`”.

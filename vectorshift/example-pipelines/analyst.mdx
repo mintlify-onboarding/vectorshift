@@ -1,5 +1,6 @@
 ---
 title: "Analyst"
+description: "Pipeline that mimics complex logical thinking"
 ---
 
 **Scenario: Say for example I am an analyst at a financial institution and want to produce a bot that helps me answer complex questions logically based on certain files.** 
@@ -16,7 +17,7 @@ At a high level, we need:
 
 Click “Build a Pipeline” within the “Overview” tab or click “Build” within the “Pipeline” tab.
 
-![](https://lh4.googleusercontent.com/HH2YJNvx1OoB_bfNbV1ISwpTQdS5V9BosDoDRWMm6DaoGGG75Juxtm743Vux6506Jrqdni3fr6gk2u3sBDkbyFpBhCRA6X_fxpBLrtHXPhfXszR10EhKfoZLVRatn6XqCZ_MT75MhQs6UqmPWRVpryc)
+<Frame>![](https://lh4.googleusercontent.com/HH2YJNvx1OoB_bfNbV1ISwpTQdS5V9BosDoDRWMm6DaoGGG75Juxtm743Vux6506Jrqdni3fr6gk2u3sBDkbyFpBhCRA6X_fxpBLrtHXPhfXszR10EhKfoZLVRatn6XqCZ_MT75MhQs6UqmPWRVpryc)</Frame>
 
 ## Step 2 - Embed Files
 
@@ -28,7 +29,7 @@ Allow for end users to feed in files and for them to be embedded in a [VectorDB]
 
 3. Connect the file loader to a [VectorDB](/vectorshift/platform/pipelines/vector-db) loader and Reader to load the file into the database and allow for database queries.
 
-![](https://lh3.googleusercontent.com/KfIyHEmLc-rpZnLCjBluT4v2mX2XJSfP8OJUV-HlM7lxKLFa0N9sep5d_SNl851dMcORzrwGvUBL3UV17xMjlNI49vwclqPcdoidaCW8ElFqhICmVp0lyXenWUq9_TwPmZkSO9svX0TFXl2KZw4mU8I)
+<Frame>![](https://lh3.googleusercontent.com/KfIyHEmLc-rpZnLCjBluT4v2mX2XJSfP8OJUV-HlM7lxKLFa0N9sep5d_SNl851dMcORzrwGvUBL3UV17xMjlNI49vwclqPcdoidaCW8ElFqhICmVp0lyXenWUq9_TwPmZkSO9svX0TFXl2KZw4mU8I)</Frame>
 
 ## Step 3 - Breaking Down The Logic
 
@@ -42,7 +43,7 @@ Create an engine that breaks down the user questions into sub-questions to allow
 
 4. We pass these questions as a query into the [VectorDB](/vectorshift/platform/pipelines/vector-db) from above to look for relevant information.
 
-![](https://lh6.googleusercontent.com/SjIOvyQY4LaPYb2jUtX--uj6wFf2LArXzCLyKcZJuFNruZE4XAsODAbyjsiv-k8KKwWAQGNMX02i1wrHebFxFp0rOYPcTtmsBdp1wklf_G0W_mPFiB7ky4CdUG0W3k5UOWTLduJN1MGh6jfBUyIiIDg)
+<Frame>![](https://lh6.googleusercontent.com/SjIOvyQY4LaPYb2jUtX--uj6wFf2LArXzCLyKcZJuFNruZE4XAsODAbyjsiv-k8KKwWAQGNMX02i1wrHebFxFp0rOYPcTtmsBdp1wklf_G0W_mPFiB7ky4CdUG0W3k5UOWTLduJN1MGh6jfBUyIiIDg)</Frame>
 
 ## Step 4 - Use Second LLM
 
@@ -58,8 +59,8 @@ Second LLM to receive the information queried using the sub-questions, synthesiz
 
 5. Connect an [Output](/vectorshift/platform/pipelines/inputs-outputs) node to the output node of the LLM.
 
-![](https://lh6.googleusercontent.com/NDZ92XGgz5ezvo8yayYUFLwtaLfcZekaNJzbJrLX8jmJYuRgA0YDk9f2gl2gU3mosfuITIBMMwC0AsZ9JQfvavKb9Z2MD4iTK_SazXAuB-ySSkNJQxljT0eu4awtX9R7wG6NXc-F34Nsm4tCsYe661U)
+<Frame>![](https://lh6.googleusercontent.com/NDZ92XGgz5ezvo8yayYUFLwtaLfcZekaNJzbJrLX8jmJYuRgA0YDk9f2gl2gU3mosfuITIBMMwC0AsZ9JQfvavKb9Z2MD4iTK_SazXAuB-ySSkNJQxljT0eu4awtX9R7wG6NXc-F34Nsm4tCsYe661U)</Frame>
 
-![](https://lh5.googleusercontent.com/mCNxDMcEroe8II0CyMNldrf_JdjeDnQNZw6Gg-u2HWR3dUE0-QHPb5nK7T5sOD01X1CXe4pm9qUWOi4X1svvSKuLI6ScJ-bJ4Ho3cFKw-Qm3zGUHTaZO4M2wWyXVOge_vyl9LZ_2ZES8vJalkDaYbso)
+<br />
 
-Full pipeline (click to enlarge)
+<Frame>![](https://lh5.googleusercontent.com/mCNxDMcEroe8II0CyMNldrf_JdjeDnQNZw6Gg-u2HWR3dUE0-QHPb5nK7T5sOD01X1CXe4pm9qUWOi4X1svvSKuLI6ScJ-bJ4Ho3cFKw-Qm3zGUHTaZO4M2wWyXVOge_vyl9LZ_2ZES8vJalkDaYbso)</Frame>

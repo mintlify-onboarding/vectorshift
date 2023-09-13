@@ -1,0 +1,38 @@
+---
+title: "Vector Stores"
+description: "Create a permanent embedded database for frequently re-used data."
+---
+
+<Note>
+    Accessing Storage requires a paid subscription.
+</Note>
+
+Vector Stores allow users to convert and store data as vector embeddings, which represent the meaning of the stored data. This representation allows users to ensure that they are always using the most relevant data for their Pipelines. You can access Vector Stores in the "Vector Stores" sub-tab in the Storage tab.
+
+You can store a wide range of data in a Vector Store, including files, scraped URLs, GitHub repositories, and more. Each data source is converted into a specified number of vectors (depending on its length). Each non-Enterprise account is capped at 1,000 total vectors across all Vector Stores.
+
+### Create a New Vector Store
+
+To create a new Vector Store, take the following steps:
+
+1. Navigate to the "Vector Stores" sub-tab in [Storage](/vectorshift/platform/storage).  
+![](/images/5.gif)
+
+2. Click "Add", and fill in the Name and Description._Advanced:_ If you want more control over how your data is converted into documents, you can change the "Chunk Size" and "Chunk Overlap" parameters. Chunk Size determines how many tokens are stored in each vector, and Chunk Overlap determines if there is any overlap between the tokens stored in each vector. Decreasing Chunk Size and/or increasing Chunk Overlap will result in the same data requiring more vectors to store, and Chunk Size determines how many tokens a query to your Vector Store will return (per document).  
+![](/images/6.gif)
+
+3. Add any relevant data to the Vector Store using the available data loaders, and click "Finish".  
+![](/images/7.gif)
+
+### Edit an Existing Vector Store
+
+To edit an existing Vector Store, take the following steps:
+
+1. Click the three-dots menu on the right-hand side of your desired Vector Store, and click "Edit".  
+![](/images/8.gif)
+
+2. _(Optional)_ Edit any of the Vector Store parameters, if desired.  
+![](/images/9.gif)
+
+3. _(Optional)_ Add or delete data from the Vector Store, if desired, and click "Finish".  
+![](/images/10.gif)

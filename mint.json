@@ -68,8 +68,24 @@
                 ]
               },
               "vectorshift/platform/marketplace",
-              "vectorshift/platform/storage",
-              "vectorshift/platform/integrations",
+              {
+                "group": "Storage",
+                "pages": [
+                  "vectorshift/platform/storage/storage",
+                  "vectorshift/platform/storage/files",
+                  "vectorshift/platform/storage/vector-stores"
+                ]
+              },
+              {
+                "group": "Integrations",
+                "pages": [
+                  "vectorshift/platform/integrations/integrations",
+                  "vectorshift/platform/integrations/notion",
+                  "vectorshift/platform/integrations/airtable",
+                  "vectorshift/platform/integrations/google-drive",
+                  "vectorshift/platform/integrations/salesforce"
+                ]
+              },
               "vectorshift/platform/chatbots",
               "vectorshift/platform/transformations",
               "vectorshift/platform/api-access"
@@ -80,7 +96,15 @@
             "pages": [
               "vectorshift/account/my-profile",
               "vectorshift/account/organizations",
-              "vectorshift/account/subscriptions",
+              {
+                "group": "Subscriptions",
+                "pages": [
+                  "vectorshift/account/subscriptions/subscriptions",
+                  "vectorshift/account/subscriptions/personal-subscriptions",
+                  "vectorshift/account/subscriptions/organization-subscriptions"
+
+                ]
+              },
               "vectorshift/account/credits"
             ]
           },
